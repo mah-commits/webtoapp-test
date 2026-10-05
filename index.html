@@ -1,152 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>WebToApp Multi-File Test</title>  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head><body>  <main class="container"><h1>WebToApp Multi-File Test</h1>
 
-  <title>WebToApp Test</title>
+<p>
+  This test uses separate HTML, CSS, JavaScript,
+  Manifest and Service Worker files.
+</p>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 500px;
-      margin: 40px auto;
-      padding: 20px;
-      text-align: center;
-    }
+<section class="card">
 
-    .box {
-      border: 1px solid #ccc;
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
+  <h2>JavaScript Test</h2>
 
-    input,
-    button {
-      font-size: 16px;
-      padding: 10px;
-      margin: 6px;
-      border-radius: 8px;
-    }
+  <button id="jsButton">
+    Run JavaScript Test
+  </button>
 
-    button {
-      cursor: pointer;
-    }
+  <div id="jsResult" class="result"></div>
 
-    .result {
-      margin-top: 15px;
-      min-height: 25px;
-      font-weight: bold;
-    }
-  </style>
-</head>
+</section>
 
-<body>
+<section class="card">
 
-  <h1>WebToApp Test</h1>
+  <h2>LocalStorage Test</h2>
 
-  <p>
-    This page tests JavaScript and LocalStorage.
-  </p>
+  <input
+    id="nameInput"
+    type="text"
+    placeholder="Type a name"
+  >
 
+  <div class="buttons">
 
-  <!-- JavaScript Test -->
-
-  <div class="box">
-
-    <h2>1. JavaScript Test</h2>
-
-    <button onclick="testJavaScript()">
-      Run JavaScript Test
-    </button>
-
-    <div id="jsResult" class="result"></div>
-
-  </div>
-
-
-  <!-- LocalStorage Test -->
-
-  <div class="box">
-
-    <h2>2. LocalStorage Test</h2>
-
-    <input
-      id="nameInput"
-      type="text"
-      placeholder="Type a name"
-    >
-
-    <br>
-
-    <button onclick="saveName()">
+    <button id="saveButton">
       Save
     </button>
 
-    <button onclick="readName()">
+    <button id="readButton">
       Read
     </button>
 
-    <div id="storageResult" class="result"></div>
-
   </div>
 
+  <div id="storageResult" class="result"></div>
 
-  <script>
+</section>
 
-    function testJavaScript() {
+<section class="card">
 
-      document.getElementById("jsResult").textContent =
-        "JavaScript is working ✓";
+  <h2>Service Worker Test</h2>
 
-    }
+  <div id="swResult" class="result">
+    Checking...
+  </div>
 
+</section>
 
-    function saveName() {
-
-      const name =
-        document.getElementById("nameInput").value.trim();
-
-      if (!name) {
-
-        document.getElementById("storageResult").textContent =
-          "Enter a name first.";
-
-        return;
-      }
-
-      localStorage.setItem(
-        "webToAppTestName",
-        name
-      );
-
-      document.getElementById("storageResult").textContent =
-        "Saved ✓";
-
-    }
-
-
-    function readName() {
-
-      const name =
-        localStorage.getItem("webToAppTestName");
-
-      if (name) {
-
-        document.getElementById("storageResult").textContent =
-          "Stored name: " + name + " ✓";
-
-      } else {
-
-        document.getElementById("storageResult").textContent =
-          "No saved name found.";
-
-      }
-
-    }
-
-  </script>
-
-</body>
+  </main>  <script src="app.js"></script></body>
 </html>
