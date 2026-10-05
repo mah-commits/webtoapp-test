@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+padding: 20px;
+
+font-family: Arial, sans-serif;
+
+background: #f4f6f8;
+}
+
+.container {
+max-width: 600px;
+margin: 30px auto;
+}
+
+h1 {
+text-align: center;
+}
+
+.card {
+background: white;
+
+padding: 20px;
+margin: 20px 0;
+
+border-radius: 12px;
+
+border: 1px solid #ddd;
+}
+
+button,
+input {
+font-size: 16px;
+
+padding: 10px;
+
+margin: 5px;
+
+border-radius: 8px;
+}
+
+input {
+width: calc(100% - 10px);
+}
+
+button {
+cursor: pointer;
+}
+
+.buttons {
+text-align: center;
+}
+
+.result {
+margin-top: 15px;
+
+min-height: 25px;
+
+font-weight: bold;
+}
